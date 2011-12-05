@@ -1,0 +1,29 @@
+<a href="#" id="more">more</a>
+<div class="clearfix" id="header">Strand ID: <%- strand_id %> <div id="count"></div> <a href="#">Share</a></div>
+
+<div id="content">
+	<ul class="lights">
+		<li style="position: relative; top:<%- offsets[0] %>px;"><div class="<%- colors[0] %>" style="-webkit-transform: rotate(<%- degrees[0] %>deg);-moz-transform: rotate(<%- degrees[0] %>deg);"></div></li>
+		<li style="position: relative; top:<%- offsets[1] %>px;"><div class="<%- colors[1] %>" style="-webkit-transform: rotate(<%- degrees[1] %>deg);-moz-transform: rotate(<%- degrees[1] %>deg);"></div></li>			
+		<li style="position: relative; top:<%- offsets[2] %>px;"><div class="<%- colors[2] %>" style="-webkit-transform: rotate(<%- degrees[2] %>deg);-moz-transform: rotate(<%- degrees[2] %>deg);"></div></li>
+		<li style="position: relative; top:<%- offsets[3] %>px;"><div class="<%- colors[3] %>" style="-webkit-transform: rotate(<%- degrees[3] %>deg);-moz-transform: rotate(<%- degrees[3] %>deg);"></div></li>					
+		<li style="position: relative; top:<%- offsets[4] %>px;"><div class="<%- colors[4] %>" style="-webkit-transform: rotate(<%- degrees[4] %>deg);-moz-transform: rotate(<%- degrees[4] %>deg);"></div></li>		
+		<li style="position: relative; top:<%- offsets[5] %>px;"><div class="<%- colors[5] %>" style="-webkit-transform: rotate(<%- degrees[5] %>deg);-moz-transform: rotate(<%- degrees[5] %>deg);"></div></li>				
+	</ul>
+</div>
+<% if (is_new == 1) { %>
+<div id="welcome">You created a new strand of lights.  Your code is <em><%- strand_id %></em>, share it with friends and make your strand longer. <a href="#" id="close">close</a></div>
+<%  } %>
+
+<div id="preload">
+   <img src="/images/real_off_red.png" width="1" height="1"  />
+   <img src="/images/real_on_red.png" width="1" height="1"  />
+   <img src="/images/real_off_blue.png" width="1" height="1"  />
+   <img src="/images/real_on_blue.png" width="1" height="1"  />
+   <img src="/images/real_off_green.png" width="1" height="1"  />
+   <img src="/images/real_on_green.png" width="1" height="1"  />
+   <img src="/images/real_on_yellow.png" width="1" height="1"  />
+   <img src="/images/real_off_yellow.png" width="1" height="1"  />
+   <img src="/images/real_off.png" width="1" height="1"  />
+   <img src="/images/real_on.png" width="1" height="1"  />
+</div>

@@ -1,0 +1,115 @@
+html {
+   font-family:Arial;
+   background-color: #000000;
+   background-image: none;
+}
+
+div#content {
+	height: 276px;
+	display: block;
+	background: url(/images/cord_green.png) 0px 55px repeat-x;
+}
+
+ul.lights {
+	margin: 33px 0;
+}
+
+ul.lights li {
+	display: block;
+	float: left;
+	width: 120px;
+	text-align: center;
+	padding: 70px 0;
+}
+
+
+ul.lights li div {
+	width: 90px;
+	margin: 0 auto;
+	height: 109px;
+	cursor: pointer;
+}
+
+ul.lights div.green {
+	background: url(/images/real_off_green.png) no-repeat;
+}
+ul.lights li.on div.green {
+	background: url(/images/real_on_green.png) no-repeat;
+}
+
+ul.lights div.yellow {
+	background: url(/images/real_off_yellow.png) no-repeat;
+}
+ul.lights li.on div.yellow {
+	background: url(/images/real_on_yellow.png) no-repeat;
+}
+
+ul.lights div.red {
+	background: url(/images/real_off_red.png) no-repeat;
+}
+ul.lights li.on div.red {
+	background: url(/images/real_on_red.png) no-repeat;
+}
+
+ul.lights div.blue {
+	background: url(/images/real_off_blue.png) no-repeat;
+}
+ul.lights li.on div.blue {
+	background: url(/images/real_on_blue.png) no-repeat;
+}
+
+ul.lights div.real {
+	background: url(/images/real_off.png) no-repeat;
+}
+ul.lights li.on div.real {
+	background: url(/images/real_on.png) no-repeat;
+}
+
+div#preload {
+	display: none;
+}
+
+
+
+div#welcome {
+	position: absolute;
+	top:40px;
+	left: 30px;
+	width: 410px;
+	margin: auto;
+	background: #fff;
+	padding: 20px 5px;
+	font-size: 1.2em;	
+}
+
+div#welcome em {
+	font-weight: bold;
+	font-size: 2em;
+}
+
+div#header {
+	color: #fff;	
+	background: #cccccc;
+	padding: 5px;
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+a#more {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	z-index: 10;
+	color: #fff;
+}
+
+div#count {
+	float: left;
+	margin: 0 10px;
+}
+
+
