@@ -15,7 +15,7 @@ var lights = function() {
 
 			$('a#close').click(function(){$(this).parent().remove(); return false;});
 
-			lights.socket = io.connect('http://lights.deeplocal.com');					
+			lights.socket = io.connect('http://127.0.0.1:8000');					
 
 			lights.socket.on('connect', function () {				
 				//console.log('CONNECTED!');																								
@@ -92,6 +92,22 @@ var lights = function() {
 				window.location = '/lights/' + $('#value').val();
 			});
 		},
+		
+		iPhoneInit: function() {
+			
+			$('#join').click(function(){
+				$('#prompt').slideDown(200);
+				return false;
+			});
+			
+			$('#join_action').click(function(){				
+				window.location = '/lights/' + $('#theid').val();
+			});
+			
+			$('#theid').focus(function(){				
+				$('#theid').val('');
+			});			
+		},		
 		
 		windowResize: function() {
 			var width = $(window).width();
