@@ -63,6 +63,29 @@ app.get('/iphone', function (req, res) {
 
 app.get('/lights/:strand_id', function (req, res) {
 	
+	/* hack check block */
+	var when = 0;
+	if (req.query.s) {
+		when = req.query.s;
+	}	
+	
+	var n = new Date().getTime();
+	if (n - when > 10000) {
+		var code = "";
+		var possible = "123456789";
+
+	    for( var i=0; i < 3; i++ ) {
+	        code += possible.charAt(Math.floor(Math.random() * possible.length));
+		}
+
+	    if(req.headers['user-agent'].toLowerCase().indexOf('mobile') > -1 && req.headers['user-agent'].toLowerCase().indexOf('ipad') == -1) {
+			res.render('iphone', {layout: 'iphone_layout.ejs', code: code});
+		} else {
+			res.render('index', {code: code});
+		}
+		return;	
+	}
+	
 	var degrees = [];
 	for(var i=0; i<20; i++) {
 		degrees[i] = Math.floor(Math.random() * 20);
@@ -97,6 +120,31 @@ app.get('/lights/:strand_id', function (req, res) {
 });
 
 app.get('/lights/new/:strand_id', function (req, res) {
+		
+		
+	/* hack check block */
+	var when = 0;
+	if (req.query.s) {
+		when = req.query.s;
+	}	
+	
+	var n = new Date().getTime();
+	if (n - when > 10000) {
+		var code = "";
+		var possible = "123456789";
+
+	    for( var i=0; i < 3; i++ ) {
+	        code += possible.charAt(Math.floor(Math.random() * possible.length));
+		}
+
+	    if(req.headers['user-agent'].toLowerCase().indexOf('mobile') > -1 && req.headers['user-agent'].toLowerCase().indexOf('ipad') == -1) {
+			res.render('iphone', {layout: 'iphone_layout.ejs', code: code});
+		} else {
+			res.render('index', {code: code});
+		}
+		return;	
+	}
+	
 	
 	var degrees = [];
 	for(var i=0; i<20; i++) {
@@ -120,12 +168,12 @@ app.get('/lights/new/:strand_id', function (req, res) {
 	}	
 	
 	req.session.strand_id = req.params.strand_id;
-	res.render('lights', {layout: 'lights_layout.ejs', 'degrees' :degrees, 'colors' : colors, 'offsets': offsets, 'strand_id' : req.params.strand_id, 'is_new' : 1});	
+	res.render('lights', {layout: 'lights_layout.ejs', 'degrees' :degrees, 'colors' : colors, 'offsets': offsets, 'strand_id' : strand_id, 'is_new' : 1});	
 });
 
 
 // Start server
-app.listen(80);
+app.listen(8000);
 
 
 var Session = require('connect').middleware.session.Session;
@@ -158,7 +206,7 @@ io.sockets.on('connection', function (socket) {
 	
 	var id = socket.handshake.sessionID + '_' + (Math.floor(Math.random() * 100)) ;
 	var parts = socket.handshake.headers.referer.split('/');
-	var strand_id = parts[parts.length -1];
+	var strand_id = parts[parts.length -1].split('?')[0];
 	
 	if (connected[strand_id]) {
 		connected[strand_id] = connected[strand_id] + 1;
@@ -193,7 +241,8 @@ io.sockets.on('connection', function (socket) {
 		playing_started[strand_id] = d.getTime();						
 	}
 		
-	socket.on('disconnect', function (data) {		
+	socket.on('disconnect', function (data) {	
+		console.log('disconnecting');	
 		for (var i=0; i< lights[strand_id].length; i++) {
 			if (lights[strand_id][i] == id) {
 				lights[strand_id].splice(i, 1);

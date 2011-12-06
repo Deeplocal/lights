@@ -4,18 +4,30 @@ var lights = function() {
 		socket: null,
 		my_id: null,
 		strand_id: null,
-		
+		started: null,
 		init : function () {
 			
+			started = new Date().getTime();
 			var width = $(window).width();
 
 			lights.windowResize();
 			
 			$(window).resize(function(){ lights.windowResize(); });
+			
+			$(window).bind('load', function(){
+				// lights.socket.disconnect();
+				// lights.socket = null;
+				// var n = new Date().getTime();
+				// if (n - started > 2000) {
+				// 	alert('aaaa');
+				// 	window.location = 'http://google.com';
+				// }
+				// console.log('loaded');
+			});			
 
 			$('a#close').click(function(){$(this).parent().remove(); return false;});
 
-			lights.socket = io.connect('http://deckthescreens.com');					
+			lights.socket = io.connect('http://127.0.0.1:8000');					
 
 			lights.socket.on('connect', function () {				
 																						
@@ -100,12 +112,20 @@ var lights = function() {
 			});
 			
 			$('#join_action').click(function(){				
-				window.location = '/lights/' + $('#theid').val();
+				var n = new Date().getTime();						
+				window.location = '/lights/' + $('#theid').val()+ '?s=' + n;
+				return false;
 			});
 			
 			$('#theid').focus(function(){				
 				$('#theid').val('');
-			});			
+			});	
+			
+			$('a.new').click(function(){
+				var n = new Date().getTime();
+				window.location = $(this).attr('href') + '?s=' + n;
+				return false;
+			});		
 		},
 		
 		iPhoneInit: function() {
@@ -115,13 +135,20 @@ var lights = function() {
 				return false;
 			});
 			
-			$('#join_action').click(function(){				
-				window.location = '/lights/' + $('#theid').val();
+			$('#join_action').click(function(){		
+				var n = new Date().getTime();						
+				window.location = '/lights/' + $('#theid').val()+ '?s=' + n;
 			});
 			
 			$('#theid').focus(function(){				
 				$('#theid').val('');
-			});			
+			});	
+			
+			$('a.new').click(function(){
+				var n = new Date().getTime();
+				window.location = $(this).attr('href') + '?s=' + n;
+				return false;
+			});					
 		},		
 		
 		windowResize: function() {
@@ -162,6 +189,17 @@ var lights = function() {
 				}
 			}
 		}
+		
+				// 	    getTime: function() {
+				// 	        var intNow = new Date().getTime();
+				// 	        if (intNow - lights.intTime > 1000) {
+				// 	            console.log("I JUST WOKE UP");
+				// window.location = 'http://deckthescreens.com';
+				// 	        }
+				// 	        lights.intTime = intNow;
+				// 	        setTimeout('lights.getTime()',500);
+				// 	    }
+		
 		
 	};
 }();
