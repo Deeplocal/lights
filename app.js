@@ -154,7 +154,7 @@ var lights = [];
 
 io.sockets.on('connection', function (socket) {
 	
-	var id = socket.handshake.sessionID;
+	var id = socket.handshake.sessionID + '_' + (Math.floor(Math.random() * 100)) ;
 	var parts = socket.handshake.headers.referer.split('/');
 	var strand_id = parts[parts.length -1];
 	

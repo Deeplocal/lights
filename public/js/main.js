@@ -15,7 +15,7 @@ var lights = function() {
 
 			$('a#close').click(function(){$(this).parent().remove(); return false;});
 
-			lights.socket = io.connect('http://lights.deeplocal.com:80');					
+			lights.socket = io.connect('http://lights.deeplocal.com');					
 
 			lights.socket.on('connect', function () {				
 				//console.log('CONNECTED!');																								
