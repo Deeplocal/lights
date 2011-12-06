@@ -1,0 +1,10 @@
+body {
+   font-family:Arial;
+   background: #cccccc url(/images/top_banner_iphone.png) repeat-x;
+}
+
+div.form {
+	width: 200px;
+	margin: 75px auto 0 auto;
+	text-align: center;
+}

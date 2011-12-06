@@ -39,8 +39,22 @@ app.get('/', function (req, res) {
     for( var i=0; i < 3; i++ ) {
         code += possible.charAt(Math.floor(Math.random() * possible.length));
 	}
+	if(req.headers['user-agent'].toLowerCase().indexOf('mobile') > -1) {
+		res.render('iphone', {layout: 'iphone_layout.ejs', code: code});
+	} else {
+		res.render('index', {code: code});
+	}
+});
+
+app.get('/iphone', function (req, res) {
 	
-	res.render('index', {code: code});
+	var code = "";
+	var possible = "123456789";
+
+    for( var i=0; i < 3; i++ ) {
+        code += possible.charAt(Math.floor(Math.random() * possible.length));
+	}	
+	res.render('iphone', {layout: 'iphone_layout.ejs', code: code});
 });
 
 
