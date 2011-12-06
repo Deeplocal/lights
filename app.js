@@ -168,7 +168,7 @@ app.get('/lights/new/:strand_id', function (req, res) {
 	}	
 	
 	req.session.strand_id = req.params.strand_id;
-	res.render('lights', {layout: 'lights_layout.ejs', 'degrees' :degrees, 'colors' : colors, 'offsets': offsets, 'strand_id' : strand_id, 'is_new' : 1});	
+	res.render('lights', {layout: 'lights_layout.ejs', 'degrees' :degrees, 'colors' : colors, 'offsets': offsets, 'strand_id' : req.params.strand_id, 'is_new' : 1});	
 });
 
 
