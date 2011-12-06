@@ -39,7 +39,9 @@ app.get('/', function (req, res) {
     for( var i=0; i < 3; i++ ) {
         code += possible.charAt(Math.floor(Math.random() * possible.length));
 	}
-	if(req.headers['user-agent'].toLowerCase().indexOf('mobile') > -1) {
+
+
+    if(req.headers['user-agent'].toLowerCase().indexOf('mobile') > -1 && req.headers['user-agent'].toLowerCase().indexOf('ipad') == -1) {
 		res.render('iphone', {layout: 'iphone_layout.ejs', code: code});
 	} else {
 		res.render('index', {code: code});
@@ -123,7 +125,7 @@ app.get('/lights/new/:strand_id', function (req, res) {
 
 
 // Start server
-app.listen(8000);
+app.listen(80);
 
 
 var Session = require('connect').middleware.session.Session;
