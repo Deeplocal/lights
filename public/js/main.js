@@ -112,7 +112,7 @@ var lights = function() {
 			});
 			
 			$('#join_action').click(function(){				
-				var n = new Date().getTime();						
+				var n = new Date().getTime() + new Date().getTimezoneOffset();
 				window.location = '/lights/' + $('#theid').val()+ '?s=' + n;
 				return false;
 			});
@@ -122,7 +122,7 @@ var lights = function() {
 			});	
 			
 			$('a.new').click(function(){
-				var n = new Date().getTime();
+				var n = new Date().getTime() + new Date().getTimezoneOffset();
 				window.location = $(this).attr('href') + '?s=' + n;
 				return false;
 			});		
@@ -136,7 +136,7 @@ var lights = function() {
 			});
 			
 			$('#join_action').click(function(){		
-				var n = new Date().getTime();						
+				var n = new Date().getTime() + new Date().getTimezoneOffset();
 				window.location = '/lights/' + $('#theid').val()+ '?s=' + n;
 			});
 			
@@ -145,7 +145,7 @@ var lights = function() {
 			});	
 			
 			$('a.new').click(function(){
-				var n = new Date().getTime();
+				var n = new Date().getTime() + new Date().getTimezoneOffset();
 				window.location = $(this).attr('href') + '?s=' + n;
 				return false;
 			});					

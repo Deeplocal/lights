@@ -69,7 +69,7 @@ app.get('/lights/:strand_id', function (req, res) {
 		when = req.query.s;
 	}	
 	
-	var n = new Date().getTime();
+	var n = new Date().getTime() + new Date().getTimezoneOffset();
 	if (n - when > 10000) {
 		var code = "";
 		var possible = "123456789";
@@ -127,8 +127,7 @@ app.get('/lights/new/:strand_id', function (req, res) {
 	if (req.query.s) {
 		when = req.query.s;
 	}	
-	
-	var n = new Date().getTime();
+	var n = new Date().getTime() + new Date().getTimezoneOffset();
 	if (n - when > 10000) {
 		var code = "";
 		var possible = "123456789";
