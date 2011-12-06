@@ -18,17 +18,17 @@ var lights = function() {
 			lights.socket = io.connect('http://deckthescreens.com');					
 
 			lights.socket.on('connect', function () {				
-				//console.log('CONNECTED!');																								
+																						
 			});			
 			
 			lights.socket.on('set_id', function (id) {				
 				lights.my_id = id;
-				//console.log('setting ID: ' + id);																								
+
 			});			
 			
 			lights.socket.on('set_strand_id', function (id) {				
 				lights.strand_id = id;
-				//console.log('setting strand ID: ' + id);																								
+
 			});		
 			
 			lights.socket.on('alert_count', function (vals) {				
@@ -92,7 +92,10 @@ var lights = function() {
 		initIndex: function() {
 			
 			$('#join').click(function(){
-				$('#prompt').slideDown(200);
+				$('#prompt').slideDown(200, function(){ 
+								$('html, body').animate({
+				                    scrollTop: $("#prompt").offset().top
+				                     }, 500); });
 				return false;
 			});
 			

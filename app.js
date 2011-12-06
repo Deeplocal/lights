@@ -194,7 +194,6 @@ io.sockets.on('connection', function (socket) {
 	}
 		
 	socket.on('disconnect', function (data) {		
-		console.log("disconnect");	
 		for (var i=0; i< lights[strand_id].length; i++) {
 			if (lights[strand_id][i] == id) {
 				lights[strand_id].splice(i, 1);
