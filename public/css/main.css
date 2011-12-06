@@ -74,6 +74,18 @@ div.join {
 }
 
 
+div.ex {
+	color: #999;
+	line-height: 1.5em;
+	font-size: 1.5em;	
+	margin: 0 0 60px 0;
+}
+
+div.ex a, div.ex a:visited {
+	color: #999;
+	text-decoration: underline;
+}
+
 
 input#theid {
 	border: 1px solid #999;
