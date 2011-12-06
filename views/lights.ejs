@@ -1,5 +1,5 @@
-<a href="#" id="more">more</a>
-<div class="clearfix" id="header">Strand ID: <%- strand_id %> <div id="count"></div> <a href="#">Share</a></div>
+<a href="#" id="more">?</a>
+<div class="clearfix" id="header">My ID: <%- strand_id %> <div id="count"></div> </div>
 
 <div id="content">
 	<ul class="lights">
@@ -12,7 +12,7 @@
 	</ul>
 </div>
 <% if (is_new == 1) { %>
-<div id="welcome">You created a new strand of lights.  Your code is <em><%- strand_id %></em>, share it with friends and make your strand longer. <a href="#" id="close">close</a></div>
+<div id="welcome"><a href="#" id="close"><img src="/images/close.png" /></a><div>Thanks for starting a new string of lights.  Tell your friends to go to http://deckthescreens.com and share the code below to add more lights. <em><%- strand_id %></em></div></div>
 <%  } %>
 
 <div id="preload">

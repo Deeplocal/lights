@@ -38,15 +38,53 @@ h1 {
 div#video {
 	width: 676px;
 	height: 406px;
-	margin: 150px auto 0 auto;
+	margin: 20px auto 0 auto;
 	padding: 11px 0 0 22px ;
 	background: url(/images/video_block.png) no-repeat;
+}
+
+div#actions {
+	margin: 0 auto 20px auto;
+	text-align: center;
+}
+
+div#actions img.or {
+	padding: 0 50px;
 }
 
 img.bar {
 	width: 845px;
 	margin: 10px auto;
 	display: block;
+	clear: both;
+}
+
+div.how {
+	margin: 30px 0;
+}
+
+div.join {
+	text-align: center;
+}
+
+
+
+input#theid {
+	border: 1px solid #999;
+	font-size: 14px;
+	padding: 2px;
+	margin: 0 10px 10px 280px;
+	height: 23px;
+	float: left;
+}
+
+a#join_action {
+	float: left;
+}
+
+div#homecontent {
+	width: 800px;
+	margin: 20px auto;
 }
 
 /* Clearfix */

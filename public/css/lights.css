@@ -72,24 +72,39 @@ div#preload {
 
 
 div#welcome {
-	position: absolute;
-	top:40px;
-	left: 30px;
-	width: 410px;
-	margin: auto;
-	background: #fff;
-	padding: 20px 5px;
-	font-size: 1.2em;	
+	position: fixed;
+	top:20%;
+	width: 70%;
+	left: 15%;
+	background: #f1f1f1;	
+	padding: 10px;
+	color: #333;
+	line-height: 1.3em;
+	text-align: center;
 }
 
 div#welcome em {
 	font-weight: bold;
-	font-size: 2em;
+	font-size: 3em;
+	display: block;
+	margin: 30px auto;
+	font-style: normal;
+	width: 50px;
+	text-shadow: #ccc 2px 2px 0em;
+}
+
+div#welcome div {
+	clear: both;
+	padding: 10px 0 0 0;
+}
+
+a#close {
+	float: right;
 }
 
 div#header {
-	color: #fff;	
-	background: #cccccc;
+	color: #333;	
+	background: #f1f1f1;
 	padding: 5px;
 	display: none;
 	position: absolute;
@@ -104,7 +119,7 @@ a#more {
 	top: 5px;
 	right: 5px;
 	z-index: 10;
-	color: #fff;
+	color: #f1f1f1;
 }
 
 div#count {

@@ -34,9 +34,9 @@ var lights = function() {
 			lights.socket.on('alert_count', function (vals) {				
 				if (vals.strand_id == lights.strand_id) {																													
 					if (vals.count != 1) {
-						$('#count').text(vals.count + ' connections');
+						$('#count').text(vals.count + ' strings of lights');
 					} else {
-						$('#count').text(vals.count + ' connection');
+						$('#count').text(vals.count + ' string of lights');
 					}
 				}
 			});
@@ -63,12 +63,14 @@ var lights = function() {
 			
 			
 			$('a#more').click(function(){
-				if ($(this).text() == 'more') { 	
+				if ($(this).text() == '?') { 	
 					$('#header').slideDown(100);
 					$(this).text('hide');
+					$(this).css({'color': '#333'});
 				} else {
 					$('#header').slideUp(100);
-					$(this).text('more');					
+					$(this).text('?');			
+					$(this).css({'color': '#f1f1f1'});							
 				}
 				return false;
 			});
@@ -88,9 +90,19 @@ var lights = function() {
 		},
 		
 		initIndex: function() {
+			
 			$('#join').click(function(){
-				window.location = '/lights/' + $('#value').val();
+				$('#prompt').slideDown(200);
+				return false;
 			});
+			
+			$('#join_action').click(function(){				
+				window.location = '/lights/' + $('#theid').val();
+			});
+			
+			$('#theid').focus(function(){				
+				$('#theid').val('');
+			});			
 		},
 		
 		iPhoneInit: function() {
