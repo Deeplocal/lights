@@ -47,6 +47,12 @@ div#video {
 	background: url(/images/video_block.png) no-repeat;
 }
 
+img#ribbon {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
 div#actions {
 	margin: 0 auto 20px auto;
 	text-align: center;

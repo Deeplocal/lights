@@ -69,7 +69,12 @@ div#preload {
 	display: none;
 }
 
-
+img#ribbon {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 10;
+}
 
 div#welcome {
 	position: fixed;
