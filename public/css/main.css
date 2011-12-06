@@ -1,12 +1,6 @@
 html {
    font-family:Arial;
-   background-color: #000000;
-   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#333333), to(#000000));
-   background-image: -webkit-linear-gradient(top, #333333, #000000);
-   background-image:    -moz-linear-gradient(top, #333333, #000000);
-   background-image:     -ms-linear-gradient(top, #333333, #000000);
-   background-image:      -o-linear-gradient(top, #333333, #000000);
-   background-repeat: no-repeat;
+   background: #cccccc url(/images/top_banner.png) repeat-x;
 }
 
 strong {
@@ -41,14 +35,18 @@ h1 {
 	margin: 0 0 10px 0;
 }
 
-div.video {
-	width: 600px;
-	height: 150px;
-	background: #ccc;
-	float: left;
-	margin: 10px 0;
-	text-align: center;
-	padding: 150px 0 0 0;
+div#video {
+	width: 676px;
+	height: 406px;
+	margin: 150px auto 0 auto;
+	padding: 11px 0 0 22px ;
+	background: url(/images/video_block.png) no-repeat;
+}
+
+img.bar {
+	width: 845px;
+	margin: 10px auto;
+	display: block;
 }
 
 /* Clearfix */
