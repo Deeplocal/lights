@@ -35,6 +35,10 @@ h1 {
 	margin: 0 0 10px 0;
 }
 
+div#video-wrap {
+	padding: 0 0 0 33px;
+}
+
 div#video {
 	width: 676px;
 	height: 406px;
@@ -83,7 +87,7 @@ a#join_action {
 }
 
 div#homecontent {
-	width: 800px;
+	width: 845px;
 	margin: 20px auto;
 }
 
