@@ -27,7 +27,7 @@ var lights = function() {
 
 			$('a#close').click(function(){$(this).parent().remove(); return false;});
 
-			lights.socket = io.connect('http://127.0.0.1:8000');					
+			lights.socket = io.connect('http://deckthescreens.com');					
 
 			lights.socket.on('connect', function () {				
 																						
