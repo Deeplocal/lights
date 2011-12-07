@@ -87,6 +87,7 @@ div#welcome {
 	line-height: 1.3em;
 	text-align: center;
 	border: 4px solid #ccc;
+	font-size: 1.2em;
 }
 
 div#welcome em {
@@ -101,7 +102,7 @@ div#welcome em {
 
 div#welcome div {
 	clear: both;
-	padding: 10px 0 0 0;
+	padding: 0 0 0 0;
 }
 
 a#close {
