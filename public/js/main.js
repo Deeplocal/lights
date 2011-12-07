@@ -5,6 +5,7 @@ var lights = function() {
 		my_id: null,
 		strand_id: null,
 		started: null,
+		to: null,
 		init : function () {
 			
 			started = new Date().getTime();
@@ -57,7 +58,8 @@ var lights = function() {
 				if (lights.my_id == id) {
 					$('.lights li').removeClass('on');
 					$('.lights li:first').addClass('on');				
-					var time = setTimeout("lights.nextLight()", 150);					
+					clearTimeout(lights.t);					
+					lights.t = setTimeout("lights.nextLight()", 150);					
 				}
 			
 			});
@@ -94,10 +96,11 @@ var lights = function() {
 				// do nothing
 				lights.socket.emit('done');
 			} else if ($('.lights li.on').nextAll('li').length == 1) { 
-//				setTimeout("lights.socket.emit('done')", 100);
-				setTimeout("lights.nextLight()", 150);
+				clearTimeout(lights.t);
+				lights.t = setTimeout("lights.nextLight()", 150);
 			} else {
-				setTimeout("lights.nextLight()", 150);				
+				clearTimeout(lights.t);
+				lights.t = setTimeout("lights.nextLight()", 150);				
 			}
 		},
 		
@@ -193,15 +196,6 @@ var lights = function() {
 			}
 		}
 		
-				// 	    getTime: function() {
-				// 	        var intNow = new Date().getTime();
-				// 	        if (intNow - lights.intTime > 1000) {
-				// 	            console.log("I JUST WOKE UP");
-				// window.location = 'http://deckthescreens.com';
-				// 	        }
-				// 	        lights.intTime = intNow;
-				// 	        setTimeout('lights.getTime()',500);
-				// 	    }
 		
 		
 	};
