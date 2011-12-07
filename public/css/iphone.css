@@ -43,3 +43,13 @@ div#prompt img.thebar {
 	width: 380px;
 	float: none;
 }
+
+a#dl {
+	display: block;
+	width: 80px;
+	height: 100px;
+	z-index: 10;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
