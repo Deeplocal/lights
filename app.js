@@ -70,7 +70,7 @@ app.get('/lights/:strand_id', function (req, res) {
 	}	
 	
 	var n = new Date().getTime() + new Date().getTimezoneOffset();
-	if (n - when > 10000) {
+	if (n - when > 60000) {
 		var code = "";
 		var possible = "123456789";
 
@@ -128,7 +128,7 @@ app.get('/lights/new/:strand_id', function (req, res) {
 		when = req.query.s;
 	}	
 	var n = new Date().getTime() + new Date().getTimezoneOffset();
-	if (n - when > 10000) {
+	if (n - when > 60000) {
 		var code = "";
 		var possible = "123456789";
 
@@ -203,7 +203,7 @@ var lights = [];
 
 io.sockets.on('connection', function (socket) {
 	
-	var id = socket.handshake.sessionID + '_' + (Math.floor(Math.random() * 100)) ;
+	var id = socket.handshake.sessionID + '_' + (Math.floor(Math.random() * 10000)) ;
 	var parts = socket.handshake.headers.referer.split('/');
 	var strand_id = parts[parts.length -1].split('?')[0];
 	
