@@ -107,9 +107,10 @@ var lights = function() {
 		initIndex: function() {
 			
 			$('#join').click(function(){
+				$(this).blur();
 				$('#prompt').slideDown(200, function(){ 
 								$('html, body').animate({
-				                    scrollTop: $("#prompt").offset().top
+				                    scrollTop: $("#join").offset().top
 				                     }, 500); });
 				return false;
 			});
