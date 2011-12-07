@@ -1,15 +1,15 @@
 body {
    font-family:Arial;
-   background: #333333 url(/images/top_banner_iphone.png) no-repeat;
+   background: #cccccc url(/images/top_banner_iphone.png) no-repeat;
 }
 
 div.form {
-	margin: 65px auto 0 auto;
+	margin: 50px auto 0 auto;
 	text-align: center;
 }
 
 h1 {
-	margin: 8px;
+	margin: 12px;
 }
 
 img.or {
@@ -22,14 +22,24 @@ div#prompt {
 
 input#theid {
 	width: 100px;
-	font-size: 1.1em;
+	font-size: 1.2em;
 	display: block;
 	float: left;
 	margin: 0 0 0 140px;
+	text-align: center;
 }
+
+
 
 div#prompt img {
 	display: block;
 	float: left;
-	margin: 3px 0 0 20px;
+	margin: 1px 0 0 20px;
+}
+
+div#prompt img.thebar {
+	display: block;
+	margin: 20px auto;
+	width: 380px;
+	float: none;
 }

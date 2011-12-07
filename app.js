@@ -172,7 +172,7 @@ app.get('/lights/new/:strand_id', function (req, res) {
 
 
 // Start server
-app.listen(80);
+app.listen(8000);
 
 
 var Session = require('connect').middleware.session.Session;

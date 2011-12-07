@@ -27,7 +27,7 @@ var lights = function() {
 
 			$('a#close').click(function(){$(this).parent().remove(); return false;});
 
-			lights.socket = io.connect('http://deckthescreens.com');					
+			lights.socket = io.connect('http://127.0.0.1:8000');					
 
 			lights.socket.on('connect', function () {				
 																						
@@ -131,7 +131,10 @@ var lights = function() {
 		iPhoneInit: function() {
 			
 			$('#join').click(function(){
-				$('#prompt').slideDown(200);
+				$('#prompt').slideDown(200, function(){ 
+								$('html, body').animate({
+				                    scrollTop: $("img.thebar").offset().top
+				                     }, 500); });
 				return false;
 			});
 			
