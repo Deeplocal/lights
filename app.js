@@ -11,6 +11,11 @@ MemoryStore = express.session.MemoryStore;
 sessionStore = new MemoryStore();
 
 
+process.on('uncaughtException', function (err) {
+	console.log('Caught exception:');
+	console.log(err);
+});
+
 // = Config =
 
 app.configure(function () {
@@ -200,6 +205,8 @@ var playing = [];
 var playing_started = [];
 
 var lights = [];
+
+
 
 io.sockets.on('connection', function (socket) {
 	
