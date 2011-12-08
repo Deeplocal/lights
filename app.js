@@ -235,6 +235,7 @@ io.sockets.on('connection', function (socket) {
 	lights[strand_id].push(id);	
 	
 	console.log('Client connected! ('+ lights[strand_id].length +') ('+ id +') + ('+ strand_id +')' );
+	socket.join(strand_id);
 	socket.emit('set_id', id);
 	socket.emit('set_strand_id', strand_id);
 	
@@ -242,7 +243,7 @@ io.sockets.on('connection', function (socket) {
 	
 	if (lights[strand_id].length == 1) {
 		playing[strand_id] = 0;
-		io.sockets.emit('play', lights[strand_id][playing[strand_id]]);
+		io.sockets.in(strand_id).emit('play', lights[strand_id][playing[strand_id]]);
 		var d = new Date;
 		playing_started[strand_id] = d.getTime();						
 	}
@@ -255,12 +256,12 @@ io.sockets.on('connection', function (socket) {
 				io.sockets.emit('alert_count', {'strand_id': strand_id, 'count': lights[strand_id].length});
 				if (i == playing[strand_id]) {
 					if (playing[strand_id] <= lights[strand_id].length - 1) {
-						io.sockets.emit('play', lights[strand_id][playing[strand_id]]);			
+						io.sockets.in(strand_id).emit('play', lights[strand_id][playing[strand_id]]);			
 						var d = new Date;
 						playing_started[strand_id] = d.getTime();
 					} else {
 						playing[strand_id] = 0;
-						io.sockets.emit('play', lights[strand_id][playing[strand_id]]);			
+						io.sockets.in(strand_id).emit('play', lights[strand_id][playing[strand_id]]);			
 						var d = new Date;
 						playing_started[strand_id] = d.getTime();						
 					}
@@ -276,12 +277,12 @@ io.sockets.on('connection', function (socket) {
 		
 		if (playing[strand_id] < lights[strand_id].length - 1) {
 			playing[strand_id]++;
-			io.sockets.emit('play', lights[strand_id][playing[strand_id]]);	
+			io.sockets.in(strand_id).emit('play', lights[strand_id][playing[strand_id]]);	
 			var d = new Date;
 			playing_started[strand_id] = d.getTime();							
 		} else {
 			playing[strand_id] = 0;
-			io.sockets.emit('play', lights[strand_id][playing[strand_id]]);			
+			io.sockets.in(strand_id).emit('play', lights[strand_id][playing[strand_id]]);			
 			var d = new Date;
 			playing_started[strand_id] = d.getTime();			
 		}
