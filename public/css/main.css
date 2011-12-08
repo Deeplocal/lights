@@ -49,6 +49,18 @@ img#ribbon {
 	top: 0;
 }
 
+div#share {
+	margin: 10px auto;
+	text-align: center;
+	width: 200px;
+}
+
+
+
+iframe.twitter-share-button {
+	float: left;
+}
+
 div#actions {
 	margin: 0 auto 20px auto;
 	text-align: center;
@@ -81,6 +93,11 @@ div.ex {
 	margin: 0 0 60px 0;
 }
 
+div.ex p {
+	clear: both;
+	display: block;
+}
+
 div.ex a, div.ex a:visited {
 	color: #999;
 	text-decoration: underline;
@@ -103,6 +120,7 @@ a#join_action {
 div#homecontent {
 	width: 845px;
 	margin: 20px auto;
+	z-index: 10;
 }
 
 /* Clearfix */
